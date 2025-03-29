@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -18,6 +19,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				montserrat: ['Montserrat', 'sans-serif'],
+				inter: ['Inter', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -25,12 +30,46 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
-					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					DEFAULT: '#2D6A4F',
+					foreground: '#FFFFFF',
+					50: '#F3FAF6',
+					100: '#DAF1E4',
+					200: '#B6E3C9',
+					300: '#8FD3AF',
+					400: '#5EBD8E',
+					500: '#3FA776',
+					600: '#2D6A4F',
+					700: '#295C45',
+					800: '#234D3A',
+					900: '#1E3F2F',
 				},
 				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
+					DEFAULT: '#1B98E0',
+					foreground: '#FFFFFF',
+					50: '#F0F9FE',
+					100: '#D0ECFA',
+					200: '#A1D9F5',
+					300: '#72C7F0',
+					400: '#43B4EB',
+					500: '#1B98E0',
+					600: '#1578B3',
+					700: '#105886',
+					800: '#0B3859',
+					900: '#051C2C',
+				},
+				accent: {
+					DEFAULT: '#FF6B35',
+					foreground: '#FFFFFF',
+					50: '#FFF5F0',
+					100: '#FFE6D9',
+					200: '#FFCDB3',
+					300: '#FFB48D',
+					400: '#FF9B66',
+					500: '#FF6B35',
+					600: '#FF3D00',
+					700: '#CC3100',
+					800: '#992500',
+					900: '#661900',
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
@@ -39,10 +78,6 @@ export default {
 				muted: {
 					DEFAULT: 'hsl(var(--muted))',
 					foreground: 'hsl(var(--muted-foreground))'
-				},
-				accent: {
-					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
@@ -61,7 +96,7 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +119,22 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.5s ease-out'
 			}
 		}
 	},
