@@ -19,10 +19,10 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+    <header className="fixed w-full bg-primary-900/95 backdrop-blur-sm shadow-sm z-50">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center">
-          <h1 className="text-2xl font-bold font-montserrat text-primary-600">
+          <h1 className="text-2xl font-bold font-montserrat text-white">
             Nutri<span className="text-accent">Boost</span>
           </h1>
         </div>
@@ -33,7 +33,7 @@ const Header = () => {
             <button
               key={item}
               onClick={() => scrollToSection(item)}
-              className="text-gray-700 hover:text-primary-600 font-medium transition-colors font-inter"
+              className="text-white hover:text-accent-400 font-medium transition-colors font-inter"
             >
               {item.charAt(0).toUpperCase() + item.slice(1)}
             </button>
@@ -48,7 +48,7 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-gray-700 focus:outline-none"
+          className="md:hidden text-white focus:outline-none"
           onClick={toggleMenu}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -57,13 +57,13 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white shadow-lg">
+        <div className="md:hidden bg-primary-800 shadow-lg">
           <div className="container mx-auto px-4 py-3 flex flex-col space-y-3">
             {["sobre", "resultados", "servicos", "depoimentos", "contato"].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
-                className="text-gray-700 hover:text-primary-600 py-2 font-medium transition-colors font-inter text-left"
+                className="text-white hover:text-accent-400 py-2 font-medium transition-colors font-inter text-left"
               >
                 {item.charAt(0).toUpperCase() + item.slice(1)}
               </button>

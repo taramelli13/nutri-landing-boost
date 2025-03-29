@@ -12,7 +12,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 
 const Index = () => {
   return (
-    <div className="font-inter">
+    <div className="font-inter bg-background text-foreground">
       <Header />
       <HeroSection />
       <BenefitsSection />

@@ -33,9 +33,9 @@ const ScrollToTop = () => {
           onClick={scrollToTop}
           variant="outline"
           size="icon"
-          className="fixed bottom-6 right-6 z-50 bg-white shadow-md border border-gray-200 rounded-full h-12 w-12 flex items-center justify-center hover:bg-primary-50"
+          className="fixed bottom-6 right-6 z-50 bg-primary-600 text-white shadow-md border border-primary-700 rounded-full h-12 w-12 flex items-center justify-center hover:bg-primary-700"
         >
-          <ChevronUp className="h-6 w-6 text-primary-600" />
+          <ChevronUp className="h-6 w-6 text-white" />
         </Button>
       )}
     </>
