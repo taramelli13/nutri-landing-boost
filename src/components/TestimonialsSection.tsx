@@ -1,148 +1,71 @@
-import { useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-
-const transformations = [
-  {
-    id: 1,
-    name: "Carlos",
-    monthsFollowed: 5,
-    programType: "premium",
-    description: "Perda de mais de 10kg com plano nutricional e treino personalizado.",
-    beforeImage: "/images/antes-rafael.jpg",
-    afterImage: "/images/depois-rafael.jpg"
-  },
-  {
-    id: 2,
-    name: "Felipe",
-    monthsFollowed: 4,
-    programType: "premium",
-    description: "Pouca diferença na balança, mas no corpo!",
-    beforeImage: "/images/antes-felipe.jpeg",
-    afterImage: "/images/depois-felipe.jpg"
-  },
-  {
-    id: 3,
-    name: "Elis",
-    monthsFollowed: 6,
-    programType: "premium",
-    description: "Aumento de massa muscular e definição corporal.",
-    beforeImage: "/images/antes-elis.jpg",
-    afterImage: "/images/depois-elis.jpg"
-  },
-  {
-    id: 4,
-    name: "Henrick",
-    monthsFollowed: 6,
-    programType: "premium",
-    description: "Aumento de massa muscular e definição corporal.",
-    beforeImage: "/images/antes-henrick.jpg",
-    afterImage: "/images/depois-henrick.jpg"
-  },
-  {
-    id: 5,
-    name: "Mayra",
-    monthsFollowed: 6,
-    programType: "premium",
-    description: "Emagrecimento saudável adaptado à rotina.",
-    beforeImage: "/images/antes-mayra.jpg",
-    afterImage: "/images/depois-mayra.jpg"
-  },
-  {
-    id: 6,
-    name: "Maria",
-    monthsFollowed: 6,
-    programType: "premium",
-    description: "-10kgs em 3 meses!",
-    beforeImage: "/images/antes-maria.jpg",
-    afterImage: "/images/depois-maria.jpg"
-  }
-];
+import TransformationCard from "./ui/TransformationCard";
 
 const TestimonialsSection = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  const scrollLeft = () => {
-    if (containerRef.current) {
-      containerRef.current.scrollBy({ left: -300, behavior: "smooth" });
+  const transformations = [
+    {
+      name: "Carlos",
+      monthsFollowed: 5,
+      description: "Perda de mais de 10kg com plano nutricional e treino personalizado.",
+      beforeImage: "/images/antes-rafael.jpg",
+      afterImage: "/images/depois-rafael.jpg",
+      programType: "premium" as const
+    },
+    {
+      name: "Felipe",
+      monthsFollowed: 4,
+      description: "Pouca diferença na balança, mas no corpo!",
+      beforeImage: "/images/antes-felipe.jpeg",
+      afterImage: "/images/depois-felipe.jpg",
+      programType: "premium" as const
+    },
+    {
+      name: "Elis",
+      monthsFollowed: 6,
+      description: "Aumento de massa muscular e definição corporal.",
+      beforeImage: "/images/antes-elis.jpg",
+      afterImage: "/images/depois-elis.jpg",
+      programType: "premium" as const
+    },
+    {
+      name: "Henrick",
+      monthsFollowed: 6,
+      description: "Aumento de massa muscular e definição corporal.",
+      beforeImage: "/images/antes-henrick.jpg",
+      afterImage: "/images/depois-henrick.jpg",
+      programType: "premium" as const
+    },
+    {
+      name: "Mayra",
+      monthsFollowed: 6,
+      description: "Emagrecimento saudável adaptado à rotina.",
+      beforeImage: "/images/antes-mayra.jpg",
+      afterImage: "/images/depois-mayra.jpg",
+      programType: "premium" as const
+    },
+    {
+      name: "Maria",
+      monthsFollowed: 6,
+      description: "-10kgs em 3 meses!",
+      beforeImage: "/images/antes-maria.jpg",
+      afterImage: "/images/depois-maria.jpg",
+      programType: "premium" as const
     }
-  };
-
-  const scrollRight = () => {
-    if (containerRef.current) {
-      containerRef.current.scrollBy({ left: 300, behavior: "smooth" });
-    }
-  };
+  ];
 
   return (
-    <section id="depoimentos" className="py-16 md:py-24 bg-white">
+    <section id="depoimentos" className="py-24 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-montserrat text-gray-900">
-            Resultados reais dos pacientes
-          </h2>
-          <p className="text-xl text-gray-700 font-inter max-w-3xl mx-auto">
-            Veja as transformações incríveis dos meus pacientes
-          </p>
-        </div>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 font-montserrat text-center text-gray-900">
+          Resultados reais dos meus pacientes
+        </h2>
+        <p className="text-xl text-gray-700 font-inter max-w-3xl mx-auto text-center mb-12">
+          Confira algumas das transformações conquistadas com acompanhamento nutricional e plano de treino personalizados.
+        </p>
 
-        <div className="relative">
-          <Button
-            onClick={scrollLeft}
-            variant="outline"
-            size="icon"
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md hidden md:flex"
-          >
-            <ChevronLeft className="h-5 w-5" />
-          </Button>
-
-          <div
-            ref={containerRef}
-            className="flex space-x-6 overflow-x-auto pb-8 scrollbar-hide snap-x snap-mandatory"
-          >
-            {transformations.map((transformation) => (
-              <div
-                key={transformation.id}
-                className="min-w-[300px] md:min-w-[350px] bg-gray-50 rounded-lg p-6 shadow-sm border border-gray-100 flex flex-col snap-start"
-              >
-                <h4 className="font-semibold text-gray-900 font-montserrat mb-2">
-                  {transformation.name} - {transformation.monthsFollowed} meses
-                </h4>
-                <div className="relative w-full aspect-[3/4] rounded overflow-hidden mb-4 flex">
-                  <div className="w-1/2 pr-1">
-                    <img
-                      src={transformation.beforeImage}
-                      alt={`${transformation.name} antes`}
-                      className="object-cover w-full h-full border-r border-gray-300"
-                      style={{ objectPosition: "center 70%" }}
-                    />
-                    <p className="text-center text-xs text-gray-500 mt-1">Antes</p>
-                  </div>
-                  <div className="w-1/2 pl-1">
-                    <img
-                      src={transformation.afterImage}
-                      alt={`${transformation.name} depois`}
-                      className="object-cover w-full h-full"
-                      style={{ objectPosition: "center 70%" }}
-                    />
-                    <p className="text-center text-xs text-gray-500 mt-1">Depois</p>
-                  </div>
-                </div>
-                <p className="text-gray-700 font-inter text-sm leading-relaxed">
-                  {transformation.description}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <Button
-            onClick={scrollRight}
-            variant="outline"
-            size="icon"
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md hidden md:flex"
-          >
-            <ChevronRight className="h-5 w-5" />
-          </Button>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {transformations.map((t, idx) => (
+            <TransformationCard key={idx} {...t} />
+          ))}
         </div>
       </div>
     </section>
