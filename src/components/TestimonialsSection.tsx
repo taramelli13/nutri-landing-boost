@@ -17,7 +17,7 @@ const transformations = [
     name: "Felipe",
     monthsFollowed: 4,
     programType: "premium",
-    description: "Pouca diferença na balanca, mas no corpo!",
+    description: "Pouca diferença na balança, mas no corpo!",
     beforeImage: "/images/antes-felipe.jpeg",
     afterImage: "/images/depois-felipe.jpg"
   },
@@ -44,7 +44,7 @@ const transformations = [
     name: "Mayra",
     monthsFollowed: 6,
     programType: "premium",
-    description: "Emagrecimento sáudavel adaptado a rotina.",
+    description: "Emagrecimento saudável adaptado à rotina.",
     beforeImage: "/images/antes-mayra.jpg",
     afterImage: "/images/depois-mayra.jpg"
   },
@@ -57,7 +57,6 @@ const transformations = [
     beforeImage: "/images/antes-maria.jpg",
     afterImage: "/images/depois-maria.jpg"
   }
-  
 ];
 
 const TestimonialsSection = () => {
@@ -65,13 +64,13 @@ const TestimonialsSection = () => {
 
   const scrollLeft = () => {
     if (containerRef.current) {
-      containerRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+      containerRef.current.scrollBy({ left: -300, behavior: "smooth" });
     }
   };
 
   const scrollRight = () => {
     if (containerRef.current) {
-      containerRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+      containerRef.current.scrollBy({ left: 300, behavior: "smooth" });
     }
   };
 
@@ -88,7 +87,7 @@ const TestimonialsSection = () => {
         </div>
 
         <div className="relative">
-          <Button 
+          <Button
             onClick={scrollLeft}
             variant="outline"
             size="icon"
@@ -96,41 +95,47 @@ const TestimonialsSection = () => {
           >
             <ChevronLeft className="h-5 w-5" />
           </Button>
-          
-          <div 
+
+          <div
             ref={containerRef}
             className="flex space-x-6 overflow-x-auto pb-8 scrollbar-hide snap-x snap-mandatory"
           >
             {transformations.map((transformation) => (
-              <div 
-                key={transformation.id} 
+              <div
+                key={transformation.id}
                 className="min-w-[300px] md:min-w-[350px] bg-gray-50 rounded-lg p-6 shadow-sm border border-gray-100 flex flex-col snap-start"
               >
-                <h4 className="font-semibold text-gray-900 font-montserrat">{transformation.name} - {transformation.monthsFollowed} meses</h4>
+                <h4 className="font-semibold text-gray-900 font-montserrat mb-2">
+                  {transformation.name} - {transformation.monthsFollowed} meses
+                </h4>
                 <div className="relative w-full aspect-[3/4] rounded overflow-hidden mb-4 flex">
-                  <div className="w-1/2">
-                    <img 
-                      src={transformation.beforeImage} 
+                  <div className="w-1/2 pr-1">
+                    <img
+                      src={transformation.beforeImage}
                       alt={`${transformation.name} antes`}
-                      className="object-cover w-full h-full object-[center_bottom] border-r border-gray-300"
+                      className="object-cover w-full h-full border-r border-gray-300"
+                      style={{ objectPosition: "center 70%" }}
                     />
                     <p className="text-center text-xs text-gray-500 mt-1">Antes</p>
                   </div>
-                  <div className="w-1/2">
-                    <img 
-                      src={transformation.afterImage} 
+                  <div className="w-1/2 pl-1">
+                    <img
+                      src={transformation.afterImage}
                       alt={`${transformation.name} depois`}
-                      className="object-cover w-full h-full object-[center_bottom]"
+                      className="object-cover w-full h-full"
+                      style={{ objectPosition: "center 70%" }}
                     />
                     <p className="text-center text-xs text-gray-500 mt-1">Depois</p>
                   </div>
                 </div>
-                <p className="text-gray-700 font-inter">{transformation.description}</p>
+                <p className="text-gray-700 font-inter text-sm leading-relaxed">
+                  {transformation.description}
+                </p>
               </div>
             ))}
           </div>
-          
-          <Button 
+
+          <Button
             onClick={scrollRight}
             variant="outline"
             size="icon"
