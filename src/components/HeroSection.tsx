@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
@@ -22,15 +21,14 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <Button 
               onClick={() => scrollToSection("agendar")}
-              className="text-lg px-6 py-6 bg-accent hover:bg-accent-600 text-white"
+              className="text-lg px-6 py-3 bg-accent hover:bg-accent-600 text-white"
               size="lg"
             >
               Quero começar agora
             </Button>
-            <Button 
+            <Button
               onClick={() => scrollToSection("servicos")}
-              variant="outline" 
-              className="text-lg px-6 py-6 border-primary text-primary hover:bg-primary-50"
+              className="text-lg px-6 py-3 border border-primary-800 text-primary-900 bg-white hover:bg-primary-100 transition-all"
               size="lg"
             >
               Conhecer serviços

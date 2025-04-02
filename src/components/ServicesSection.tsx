@@ -1,104 +1,91 @@
+import { CheckCircle } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
-
-const services = [
-  {
-    id: 1,
-    title: "Consultoria para Hipertrofia",
-    description: "Protocolo nutricional focado no ganho de massa muscular, com estratégias de periodização calórica e nutrientes específicos para otimizar seu treinamento.",
-    includes: ["Avaliação corporal", "Plano alimentar detalhado", "Suplementação estratégica", "Ajustes quinzenais"],
-    price: "R$ 497/mês",
-    popular: false
-  },
-  {
-    id: 2,
-    title: "Programa de Emagrecimento",
-    description: "Estratégia personalizada para perda de gordura mantendo a massa muscular, com protocolos que respeitam sua fome e preferências alimentares.",
-    includes: ["Avaliação metabólica", "Dieta personalizada", "Monitoramento semanal", "Suporte via WhatsApp"],
-    price: "R$ 547/mês",
-    popular: true
-  },
-  {
-    id: 3,
-    title: "Pacote Performance Total",
-    description: "Abordagem integrada para atletas e praticantes avançados que buscam o máximo desempenho, combinando estratégias de composição corporal e performance.",
-    includes: ["Plano periodizado completo", "Nutrição pré/intra/pós treino", "Suplementação avançada", "Consultas quinzenais"],
-    price: "R$ 697/mês",
-    popular: false
-  }
-];
-
-const ServicesSection = () => {
-  const scrollToContact = () => {
-    const element = document.getElementById("agendar");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
+const ServicePlans = () => {
   return (
-    <section id="servicos" className="py-16 md:py-24 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-montserrat text-gray-900">
-            Serviços personalizados
-          </h2>
-          <p className="text-xl text-gray-700 font-inter max-w-3xl mx-auto">
-            Escolha o programa que melhor se adapta aos seus objetivos
-          </p>
-        </div>
+    <section className="bg-white py-20" id="servicos">
+      <div className="container mx-auto px-4 text-center">
+        <h2 className="text-4xl md:text-5xl font-bold font-montserrat mb-4 text-primary-900">
+          Planos de Acompanhamento
+        </h2>
+        <p className="text-lg md:text-xl text-primary-800 font-inter font-medium mb-12 max-w-2xl mx-auto">
+          Escolha o plano que mais combina com seus objetivos e conte comigo para alcançar sua melhor versão.
+        </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {services.map((service) => (
-            <div 
-              key={service.id} 
-              className={`bg-white rounded-lg shadow-md overflow-hidden border ${service.popular ? 'border-accent' : 'border-gray-200'} flex flex-col h-full`}
-            >
-              {service.popular && (
-                <div className="bg-accent text-white text-center py-2 text-sm font-semibold">
-                  MAIS POPULAR
-                </div>
-              )}
-              <div className="p-6 flex-grow">
-                <h3 className="text-xl font-bold mb-3 font-montserrat text-gray-900">{service.title}</h3>
-                <p className="text-gray-700 mb-4 font-inter">{service.description}</p>
-                <ul className="space-y-2 mb-6">
-                  {service.includes.map((item, index) => (
-                    <li key={index} className="flex items-center text-gray-700 font-inter">
-                      <span className="inline-block w-2 h-2 bg-primary-500 rounded-full mr-2"></span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="p-6 bg-gray-50 border-t border-gray-200">
-                <p className="text-2xl font-bold text-primary-600 mb-4 font-montserrat">{service.price}</p>
-                <Button 
-                  onClick={scrollToContact}
-                  className={`w-full ${service.popular ? 'bg-accent hover:bg-accent-600' : 'bg-primary hover:bg-primary-700'} text-white`}
-                >
-                  Quero este plano
-                </Button>
-              </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Plano Nutri */}
+          <div className="border border-primary-700 rounded-2xl p-6 shadow-sm text-left flex flex-col justify-between">
+            <div>
+              <h3 className="text-2xl font-bold font-montserrat mb-2 text-primary-900">
+                Plano Nutri
+              </h3>
+              <p className="text-gray-700 mb-4">
+                Nutrição personalizada baseada em ciência, pensada para a sua rotina, preferências e objetivos.
+              </p>
+              <ul className="text-sm text-gray-700 space-y-2 mb-6">
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="text-green-500 w-4 h-4" /> Alimentação personalizada
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="text-green-500 w-4 h-4" /> Feedbacks quinzenais
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="text-green-500 w-4 h-4" /> Estratégias flexíveis
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="text-green-500 w-4 h-4" /> Suporte via WhatsApp
+                </li>
+              </ul>
             </div>
-          ))}
-        </div>
+            <a
+              href="https://wa.me/5518991452285?text=Ol%C3%A1%2C%20Ygor!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Plano%20Nutri.&utm_source=landingpage&utm_medium=botao&utm_campaign=plano-nutri"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block text-center bg-primary-700 hover:bg-primary-800 text-white w-full py-3 px-6 rounded-md font-medium transition-colors"
+            >
+              Quero esse plano
+            </a>
+          </div>
 
-        <div className="mt-12 text-center">
-          <p className="text-gray-600 font-inter mb-4">
-            Não encontrou um plano adequado para suas necessidades?
-          </p>
-          <Button 
-            onClick={scrollToContact}
-            variant="outline" 
-            className="border-primary text-primary hover:bg-primary-50"
-          >
-            Entre em contato para um plano personalizado
-          </Button>
+          {/* Plano Premium */}
+          <div className="border-2 border-primary-700 rounded-2xl p-6 shadow-md text-left relative flex flex-col justify-between">
+            <div>
+              <span className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary-700 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">
+                MAIS POPULAR
+              </span>
+              <h3 className="text-2xl font-bold font-montserrat mb-2 text-primary-900 mt-4">
+                Plano Premium
+              </h3>
+              <p className="text-gray-700 mb-4">
+                Nutrição + treino individualizado com acompanhamento completo para acelerar seus resultados.
+              </p>
+              <ul className="text-sm text-gray-700 space-y-2 mb-6">
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="text-green-500 w-4 h-4" /> Tudo do Plano Nutri
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="text-green-500 w-4 h-4" /> Treino com progressão no app
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="text-green-500 w-4 h-4" /> Materiais educativos sobre treino
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="text-green-500 w-4 h-4" /> Evolução orientada e contínua
+                </li>
+              </ul>
+            </div>
+            <a
+              href="https://wa.me/5518991452285?text=Ol%C3%A1%2C%20Ygor!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Plano%20Premium.&utm_source=landingpage&utm_medium=botao&utm_campaign=plano-premium"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block text-center bg-primary-700 hover:bg-primary-800 text-white w-full py-3 px-6 rounded-md font-medium transition-colors"
+            >
+              Quero esse plano
+            </a>
+          </div>
         </div>
       </div>
     </section>
   );
 };
 
-export default ServicesSection;
+export default ServicePlans;

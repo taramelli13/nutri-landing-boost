@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -21,10 +20,17 @@ const Header = () => {
   return (
     <header className="fixed w-full bg-primary-900/95 backdrop-blur-sm shadow-sm z-50">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <div className="flex items-center">
-          <h1 className="text-2xl font-bold font-montserrat text-white">
-            Nutri<span className="text-accent">Boost</span>
-          </h1>
+        
+        {/* Logo + Nome */}
+        <div className="flex items-center space-x-3">
+          <img
+            src="/images/logo-branco.png"
+            alt="Logo Ygor Taramelli"
+            className="h-12 object-contain"
+          />
+          <span className="text-white text-xl md:text-2xl font-bold font-montserrat">
+            Ygor Taramelli
+          </span>
         </div>
 
         {/* Desktop Navigation */}

@@ -1,4 +1,3 @@
-
 import { CircleCheck } from "lucide-react";
 
 const GuaranteeSection = () => {
@@ -31,20 +30,20 @@ const GuaranteeSection = () => {
           </div>
           <div className="md:w-1/2 bg-gradient-to-r from-primary-100 to-primary-200 p-8 md:p-12">
             <h3 className="text-xl font-bold mb-4 text-primary-700 font-montserrat">
-              O que nossos pacientes dizem:
+              O que meus pacientes dizem:
             </h3>
             <blockquote className="text-gray-800 font-inter italic mb-6">
-              "A abordagem do Dr. Carlos vai muito além de apenas contar calorias. É um processo educativo que me fez entender meu corpo e construir hábitos sustentáveis. Os resultados foram muito além das minhas expectativas."
+              "O atendimento do Ygor foi um divisor de águas na minha jornada. Além da dieta personalizada, o suporte constante e a forma como ele explica tudo me fizeram entender como cuidar do meu corpo de forma leve e eficiente. Finalmente encontrei um plano que funciona pra mim."
             </blockquote>
             <div className="flex items-center">
               <img 
-                src="https://randomuser.me/api/portraits/women/65.jpg" 
+                src="https://randomuser.me/api/portraits/women/68.jpg" 
                 alt="Depoimento de paciente" 
                 className="w-12 h-12 rounded-full mr-4"
               />
               <div>
-                <p className="font-semibold text-primary-700 font-montserrat">Juliana Mendes</p>
-                <p className="text-sm text-primary-600">Paciente há 6 meses</p>
+                <p className="font-semibold text-primary-700 font-montserrat">Larissa Mendes</p>
+                <p className="text-sm text-primary-600">Paciente há 5 meses</p>
               </div>
             </div>
           </div>
