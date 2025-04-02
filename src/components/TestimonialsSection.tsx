@@ -8,28 +8,56 @@ const transformations = [
     name: "Carlos",
     monthsFollowed: 5,
     programType: "premium",
-    description: "Perda de mais de 30kg com plano nutricional e treino personalizado.",
-    beforeImage: "/images/carlos-before.jpg",
-    afterImage: "/images/carlos-after.jpg"
+    description: "Perda de mais de 10kg com plano nutricional e treino personalizado.",
+    beforeImage: "/images/antes-rafael.jpg",
+    afterImage: "/images/depois-rafael.jpg"
   },
   {
     id: 2,
-    name: "Fernanda",
+    name: "Felipe",
     monthsFollowed: 4,
-    programType: "standard",
-    description: "Transformação incrível com foco em emagrecimento saudável.",
-    beforeImage: "/images/fernanda-before.jpg",
-    afterImage: "/images/fernanda-after.jpg"
+    programType: "premium",
+    description: "Pouca diferença na balanca, mas no corpo!",
+    beforeImage: "/images/antes-felipe.jpg",
+    afterImage: "/images/depos-felipe.jpg"
   },
   {
     id: 3,
-    name: "Lucas",
+    name: "Elis",
     monthsFollowed: 6,
     programType: "premium",
     description: "Aumento de massa muscular e definição corporal.",
-    beforeImage: "/images/lucas-before.jpg",
-    afterImage: "/images/lucas-after.jpg"
+    beforeImage: "/images/antes-elis.jpg",
+    afterImage: "/images/depois-elis.jpg"
+  },
+  {
+    id: 4,
+    name: "Henrick",
+    monthsFollowed: 6,
+    programType: "premium",
+    description: "Aumento de massa muscular e definição corporal.",
+    beforeImage: "/images/antes-henrick.jpg",
+    afterImage: "/images/depois-henrick.jpg"
+  },
+  {
+    id: 5,
+    name: "Mayra",
+    monthsFollowed: 6,
+    programType: "premium",
+    description: "Emagrecimento sáudavel adaptado a rotina.",
+    beforeImage: "/images/antes-mayra.jpg",
+    afterImage: "/images/depois-mayra.jpg"
+  },
+  {
+    id: 6,
+    name: "Maria",
+    monthsFollowed: 6,
+    programType: "premium",
+    description: "-10kgs em 3 meses!",
+    beforeImage: "/images/antes-maria.jpg",
+    afterImage: "/images/depois-maria.jpg"
   }
+  
 ];
 
 const TestimonialsSection = () => {
