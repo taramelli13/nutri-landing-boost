@@ -18,8 +18,8 @@ const transformations = [
     monthsFollowed: 4,
     programType: "premium",
     description: "Pouca diferença na balanca, mas no corpo!",
-    beforeImage: "/images/antes-felipe.jpg",
-    afterImage: "/images/depos-felipe.jpg"
+    beforeImage: "/images/antes-felipe.jpeg",
+    afterImage: "/images/depois-felipe.jpg"
   },
   {
     id: 3,
@@ -107,19 +107,23 @@ const TestimonialsSection = () => {
                 className="min-w-[300px] md:min-w-[350px] bg-gray-50 rounded-lg p-6 shadow-sm border border-gray-100 flex flex-col snap-start"
               >
                 <h4 className="font-semibold text-gray-900 font-montserrat">{transformation.name} - {transformation.monthsFollowed} meses</h4>
-                <div className="flex space-x-4 mb-4">
-                  <img 
-                    src={transformation.beforeImage} 
-                    alt={`${transformation.name} antes`}
-                    className="object-cover aspect-[3/4] w-full"
-                    style={{ objectPosition: "top center" }}
-                  />
-                  <img 
-                    src={transformation.afterImage} 
-                    alt={`${transformation.name} depois`}
-                    className="object-cover aspect-[3/4] w-full"
-                    style={{ objectPosition: "top center" }}
-                  />
+                <div className="relative w-full aspect-[3/4] rounded overflow-hidden mb-4 flex">
+                  <div className="w-1/2">
+                    <img 
+                      src={transformation.beforeImage} 
+                      alt={`${transformation.name} antes`}
+                      className="object-cover w-full h-full object-[center_bottom] border-r border-gray-300"
+                    />
+                    <p className="text-center text-xs text-gray-500 mt-1">Antes</p>
+                  </div>
+                  <div className="w-1/2">
+                    <img 
+                      src={transformation.afterImage} 
+                      alt={`${transformation.name} depois`}
+                      className="object-cover w-full h-full object-[center_bottom]"
+                    />
+                    <p className="text-center text-xs text-gray-500 mt-1">Depois</p>
+                  </div>
                 </div>
                 <p className="text-gray-700 font-inter">{transformation.description}</p>
               </div>
