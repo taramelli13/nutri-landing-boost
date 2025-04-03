@@ -87,13 +87,13 @@ const TestimonialsSection = () => {
           </Button>
 
           <div
-  ref={containerRef}
-  className="flex overflow-x-auto snap-x snap-mandatory space-x-6 pb-4 px-4"
->
-  {transformations.map((transformation) => (
-    <TransformationCard key={transformation.name} {...transformation} />
-  ))}
-</div>
+            ref={containerRef}
+            className="flex overflow-x-auto snap-x snap-mandatory space-x-1 pb-4 px-4"
+          >
+            {transformations.map((transformation) => (
+              <TransformationCard key={transformation.name} {...transformation} />
+            ))}
+          </div>
 
           <Button 
             onClick={scrollRight}
