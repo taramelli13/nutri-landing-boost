@@ -1,3 +1,73 @@
+
+import React, { useState } from 'react';
+import { Button } from './ui/button';
+import { Input } from './ui/input';
+import { Textarea } from './ui/textarea';
+import { Check } from 'lucide-react';
+import { createClient } from '@supabase/supabase-js';
+
+// Initialize Supabase client with the config from index.html
+const supabase = createClient(
+  'https://iderwbvrzwkcoywkyzqa.supabase.co',
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlkZXJ3YnZyendrY295d2t5enFhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDM3MDY1NDEsImV4cCI6MjA1OTI4MjU0MX0.DDr0uDoEW7xP_zpKTh5G62HUJejNNwfnVxd1sBVw1Xc'
+);
+
+const ContactSection = () => {
+  // State for form submission
+  const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  // State for form data
+  const [formState, setFormState] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    goal: 'emagrecimento',
+    message: ''
+  });
+
+  // Handle form input changes
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormState(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    try {
+      // Insert data into Supabase
+      const { error } = await supabase
+        .from('contacts')
+        .insert([formState]);
+      
+      if (error) {
+        console.error('Error submitting form:', error);
+        alert('Ocorreu um erro ao enviar o formulário. Por favor, tente novamente.');
+      } else {
+        // Reset form and show success message
+        setFormState({
+          name: '',
+          email: '',
+          phone: '',
+          goal: 'emagrecimento',
+          message: ''
+        });
+        setSubmitted(true);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Ocorreu um erro ao enviar o formulário. Por favor, tente novamente.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="agendar" className="py-16 md:py-24 bg-primary-50">
       <div className="container mx-auto px-4">
@@ -58,3 +128,6 @@
       </div>
     </section>
   );
+};
+
+export default ContactSection;
