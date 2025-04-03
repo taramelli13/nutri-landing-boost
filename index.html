@@ -32,6 +32,18 @@
       gtag('js', new Date());
       gtag('config', 'G-T93BEVHBL4');
     </script>
+
+    <!-- Adicione esta linha para carregar o Supabase JS antes do seu bundle -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    
+    <!-- Adicione esta configuração inicial do Supabase -->
+    <script>
+      // Configuração inicial do Supabase (opcional - pode ser feito no seu main.tsx)
+      window.supabaseConfig = {
+        url: 'SUA_URL_DO_SUPABASE',
+        key: 'SUA_CHAVE_PUBLICA_ANON_KEY'
+      };
+    </script>
   </head>
   <body>
     <div id="root"></div>
