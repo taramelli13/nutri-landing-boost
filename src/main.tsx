@@ -1,19 +1,28 @@
-export const initGoogleAnalytics = () => {
-  const GA_MEASUREMENT_ID = "G-T93BEVHBL4";
+import { createRoot } from 'react-dom/client'
+import App from './App.tsx'
+import './index.css'
 
-  const script = document.createElement("script");
-  script.async = true;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-  document.head.appendChild(script);
+// Inicializar Google Analytics
+const initGoogleAnalytics = () => {
+  const GA_MEASUREMENT_ID = "G-T93BEVHBL4"
 
-  window.dataLayer = window.dataLayer || [];
+  const script = document.createElement("script")
+  script.async = true
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
+  document.head.appendChild(script)
+
+  window.dataLayer = window.dataLayer || []
   function gtag(...args: any[]) {
-    window.dataLayer.push(args);
+    window.dataLayer.push(args)
   }
 
-  gtag("js", new Date());
-  gtag("config", GA_MEASUREMENT_ID);
-  
+  gtag("js", new Date())
+  gtag("config", GA_MEASUREMENT_ID)
+
   // @ts-ignore
-  window.gtag = gtag;
-};
+  window.gtag = gtag
+}
+
+initGoogleAnalytics()
+
+createRoot(document.getElementById("root")!).render(<App />)
