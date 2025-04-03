@@ -42,7 +42,7 @@ const GuaranteeSection = () => {
                 className="w-12 h-12 rounded-full mr-4"
               />
               <div>
-                <p className="font-semibold text-primary-700 font-montserrat">Rafaela</p>
+                <p className="font-semibold text-primary-700 font-montserrat">Rafaela Lopes</p>
                 <p className="text-sm text-primary-600">Paciente há 5 meses</p>
               </div>
             </div>

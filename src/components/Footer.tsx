@@ -71,9 +71,12 @@ const Footer = () => {
             <li>CEP: 16015-433</li>
             <li>Tel: (18) 99145-2285</li>
           </ul>
-          <Button className="bg-accent mt-4 hover:bg-accent-600 text-white">
+          <a
+            href="#contato"
+            className="inline-block bg-accent mt-4 hover:bg-accent-600 text-white text-sm px-4 py-2 rounded transition-colors"
+          >
             Agendar consulta
-          </Button>
+          </a>
         </div>
       </div>
 
