@@ -3,26 +3,26 @@ import { useState } from "react";
 interface TransformationCardProps {
   name: string;
   monthsFollowed: number;
-  description: string;
   image: string;
 }
 
-const TransformationCard = ({ name, monthsFollowed, description, image }: TransformationCardProps) => {
+const TransformationCard = ({ name, monthsFollowed, image }: TransformationCardProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="bg-green-600 rounded-xl shadow-md overflow-hidden border border-green-700">
         <img
           src={image}
           alt={`Transformação de ${name}`}
-          className="object-cover w-full h-72 cursor-zoom-in transition-transform duration-300 hover:scale-105"
+          className="w-full h-72 object-cover object-[center_80%] rounded-lg border-2 border-primary-500 shadow-sm cursor-zoom-in transition-transform duration-300 hover:scale-105"
           onClick={() => setIsOpen(true)}
         />
-        <div className="p-4">
-          <h3 className="text-lg font-semibold text-gray-900">{name}</h3>
-          <p className="text-sm text-gray-600">{monthsFollowed} meses de acompanhamento</p>
-          <p className="text-sm text-gray-700 mt-2">{description}</p>
+        <div className="p-5 text-center">
+          <h3 className="text-xl font-bold text-white font-montserrat">{name}</h3>
+          <p className="text-sm text-white font-inter tracking-wide mt-1">
+            {monthsFollowed} meses de acompanhamento
+          </p>
         </div>
       </div>
 
