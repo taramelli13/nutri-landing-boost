@@ -1,4 +1,3 @@
-
 const AboutSection = () => {
   return (
     <section id="resultados" className="py-16 md:py-24 bg-primary-50">
@@ -7,7 +6,7 @@ const AboutSection = () => {
           <div className="md:w-2/5 mb-10 md:mb-0">
             <div className="rounded-lg overflow-hidden shadow-xl">
               <img 
-                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=600&q=80" 
+                src="/images/eu.jpg" 
                 alt="Ygor Taramelli - Nutricionista Esportivo" 
                 className="w-full h-auto"
               />
