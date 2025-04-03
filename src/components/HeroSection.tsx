@@ -40,7 +40,7 @@ const HeroSection = () => {
             <img 
               src="/images/eu.jpg" 
               alt="Ygor Taramelli atendendo paciente" 
-              className="w-full h-[420px] object-cover object-[center_top] rounded-lg border-4 border-primary-200"
+              className="w-full h-[450px] object-cover object-top rounded-xl border-4 border-primary-200 shadow-lg"
             />
           </div>
         </div>
