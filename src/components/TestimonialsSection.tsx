@@ -81,17 +81,22 @@ const TestimonialsSection = () => {
             onClick={scrollLeft}
             variant="outline"
             size="icon"
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow hidden md:flex"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-green-600 text-white hover:bg-green-700 shadow hidden md:flex"
           >
             <ChevronLeft className="w-5 h-5" />
           </Button>
 
           <div
             ref={containerRef}
-            className="flex overflow-x-auto snap-x snap-mandatory space-x-1 pb-4 px-4"
+            className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-4 px-4 scroll-smooth"
           >
             {transformations.map((transformation) => (
-              <TransformationCard key={transformation.name} {...transformation} />
+              <div
+                key={transformation.name}
+                className="flex-shrink-0 snap-start w-[300px]"
+              >
+                <TransformationCard {...transformation} />
+              </div>
             ))}
           </div>
 
@@ -99,7 +104,7 @@ const TestimonialsSection = () => {
             onClick={scrollRight}
             variant="outline"
             size="icon"
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow hidden md:flex"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-green-600 text-white hover:bg-green-700 shadow hidden md:flex"
           >
             <ChevronRight className="w-5 h-5" />
           </Button>
