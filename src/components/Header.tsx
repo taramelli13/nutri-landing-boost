@@ -36,13 +36,13 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8">
           {["sobre", "resultados", "servicos", "depoimentos", "contato"].map((item) => (
-            <button
+            <a
               key={item}
-              onClick={() => scrollToSection(item)}
+              href={"#" + item}
               className="text-white hover:text-accent-400 font-medium transition-colors font-inter"
             >
               {item.charAt(0).toUpperCase() + item.slice(1)}
-            </button>
+            </a>
           ))}
           <Button 
             onClick={() => scrollToSection("agendar")}
@@ -66,13 +66,14 @@ const Header = () => {
         <div className="md:hidden bg-primary-800 shadow-lg">
           <div className="container mx-auto px-4 py-3 flex flex-col space-y-3">
             {["sobre", "resultados", "servicos", "depoimentos", "contato"].map((item) => (
-              <button
+              <a
                 key={item}
-                onClick={() => scrollToSection(item)}
-                className="text-white hover:text-accent-400 py-2 font-medium transition-colors font-inter text-left"
+                href={"#" + item}
+                className="text-white hover:text-accent-400 py-2 font-medium transition-colors font-inter"
+                onClick={() => setIsMenuOpen(false)}
               >
                 {item.charAt(0).toUpperCase() + item.slice(1)}
-              </button>
+              </a>
             ))}
             <Button 
               onClick={() => scrollToSection("agendar")}
