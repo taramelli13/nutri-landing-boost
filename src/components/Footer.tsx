@@ -66,10 +66,10 @@ const Footer = () => {
         <div>
           <h4 className="text-white font-bold mb-4">Contato</h4>
           <ul className="space-y-2 text-primary-100 text-sm">
-            <li>Avenida Paulista, 1000</li>
-            <li>São Paulo, SP</li>
-            <li>CEP: 01310-100</li>
-            <li>Tel: (11) 98765-4321</li>
+            <li>Silva Jardim, 798</li>
+            <li>Vila Sao Paulo, Araçatuba</li>
+            <li>CEP: 16015-433</li>
+            <li>Tel: (18) 99145-2285</li>
           </ul>
           <Button className="bg-accent mt-4 hover:bg-accent-600 text-white">
             Agendar consulta

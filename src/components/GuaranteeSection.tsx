@@ -38,7 +38,7 @@ const GuaranteeSection = () => {
             <div className="flex items-center">
               <img 
                 src="/images/rafa.jpg" 
-                alt="Depoimento de Rafaela" 
+                alt="Depoimento de Rafaela Lopes" 
                 className="w-12 h-12 rounded-full mr-4"
               />
               <div>
