@@ -7,55 +7,46 @@ const transformations = [
   {
     name: "Carlos",
     monthsFollowed: 5,
-    description: "Perda de mais de 10kg com plano nutricional e treino personalizado.",
     image: "/images/ev-rafael.jpg",
   },
   {
     name: "Felipe",
     monthsFollowed: 4,
-    description: "Pouca diferença na balança, mas no corpo!",
     image: "/images/ev-felipe.jpg",
   },
   {
     name: "Elis",
-    monthsFollowed: 6,
-    description: "Aumento de massa muscular e definição corporal.",
+    monthsFollowed: 12,
     image: "/images/ev-elis.jpg",
   },
   {
     name: "Henrick",
-    monthsFollowed: 6,
-    description: "Ganho de massa e definição com plano personalizado.",
+    monthsFollowed: 12,
     image: "/images/ev-henrick.jpg",
   },
   {
     name: "Mayra",
-    monthsFollowed: 6,
-    description: "Emagrecimento saudável adaptado à rotina.",
+    monthsFollowed: 4,
     image: "/images/ev-mayra.jpg",
   },
   {
     name: "Maria",
     monthsFollowed: 3,
-    description: "Redução de medidas e melhora na composição corporal.",
     image: "/images/ev-maria.jpg",
   },
   {
     name: "Rodrigo",
-    monthsFollowed: 4,
-    description: "Definição muscular com treino e dieta consistentes.",
+    monthsFollowed: 3,
     image: "/images/ev-rodrigo.jpg",
   },
   {
     name: "Lucas",
     monthsFollowed: 5,
-    description: "Transformação completa com acompanhamento intensivo.",
     image: "/images/ev-lucas.jpg",
   },
   {
     name: "Murata",
-    monthsFollowed: 3,
-    description: "Resultados rápidos com plano estratégico e disciplina.",
+    monthsFollowed: 4,
     image: "/images/ev-murata.jpg",
   },
 ];
@@ -95,7 +86,11 @@ const TestimonialsSection = () => {
                 key={transformation.name}
                 className="flex-shrink-0 snap-start w-[300px]"
               >
-                <TransformationCard {...transformation} />
+                <TransformationCard
+                  name={transformation.name}
+                  monthsFollowed={transformation.monthsFollowed}
+                  image={transformation.image}
+                />
               </div>
             ))}
           </div>
