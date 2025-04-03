@@ -8,7 +8,7 @@ const transformations = [
     name: "Carlos",
     monthsFollowed: 5,
     description: "Perda de mais de 10kg com plano nutricional e treino personalizado.",
-    image: "/images/ev-carlos.jpg",
+    image: "/images/ev-rafael.jpg",
   },
   {
     name: "Felipe",
