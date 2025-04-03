@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import TransformationCard from "./TransformationCard";
+import TransformationCard from "./ui/TransformationCard";
 
 const transformations = [
   {
