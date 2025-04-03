@@ -38,7 +38,7 @@ const HeroSection = () => {
         <div className="md:w-1/2">
           <div className="rounded-lg overflow-hidden shadow-xl">
             <img 
-              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" 
+              src="/images/peito.jpg" 
               alt="Nutricionista em consulta" 
               className="w-full h-auto"
             />
