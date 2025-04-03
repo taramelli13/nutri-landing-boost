@@ -33,16 +33,16 @@ const GuaranteeSection = () => {
               O que meus pacientes dizem:
             </h3>
             <blockquote className="text-gray-800 font-inter italic mb-6">
-              "O atendimento do Ygor foi um divisor de águas na minha jornada. Além da dieta personalizada, o suporte constante e a forma como ele explica tudo me fizeram entender como cuidar do meu corpo de forma leve e eficiente. Finalmente encontrei um plano que funciona pra mim."
+              "Fazia muito tempo que eu estava querendo emagrecer, mas sempre procrastinei porque pra mim emagrecer era me privar de coisas que eu gosto e passar fome. O Ygor me mostrou que isso não era necessário, com ele tenho um planejamento prazeroso comendo só o que gosto, e desde que começamos já emagreci 5kg e ganhei bastante massa muscular"
             </blockquote>
             <div className="flex items-center">
               <img 
-                src="https://randomuser.me/api/portraits/women/68.jpg" 
-                alt="Depoimento de paciente" 
+                src="/images/rafa.jpg" 
+                alt="Depoimento de Rafaela" 
                 className="w-12 h-12 rounded-full mr-4"
               />
               <div>
-                <p className="font-semibold text-primary-700 font-montserrat">Larissa Mendes</p>
+                <p className="font-semibold text-primary-700 font-montserrat">Rafaela</p>
                 <p className="text-sm text-primary-600">Paciente há 5 meses</p>
               </div>
             </div>
