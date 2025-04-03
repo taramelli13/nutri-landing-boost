@@ -27,7 +27,7 @@ const AboutSection = () => {
                 Minha abordagem combina as mais recentes evidências científicas com um olhar humanizado para as necessidades individuais de cada pessoa. Acredito que nutrição eficaz deve ser personalizada, prática e adaptada ao seu estilo de vida.
               </p>
               <p>
-                • Formação: Graduação em Nutrição (Unitoledo), Especialização em Nutrição Esportiva (USP)<br />
+                • Formação: Graduação em Nutrição (Unitoledo), Especialização em Nutrição Esportiva <br />
                 • Certificações: ISAK Nível 1, Nutrição Funcional Aplicada ao Esporte<br />
                 • Experiência: +200 atendimentos realizados, focados em planejamentos individualizados, desde atletas profissionais ou amadores de fisiculturismo, até pessoas que apenas buscam melhoras no físico e na saúde
               </p>
