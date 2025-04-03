@@ -39,7 +39,7 @@ const HeroSection = () => {
           <div className="rounded-lg overflow-hidden shadow-xl">
             <img 
               src="/images/peito.jpg" 
-              alt="Nutricionista em consulta" 
+              alt="Ygor Taramelli posando para foto" 
               className="w-full h-auto"
             />
           </div>
