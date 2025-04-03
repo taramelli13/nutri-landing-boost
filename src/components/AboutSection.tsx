@@ -6,9 +6,9 @@ const AboutSection = () => {
           <div className="md:w-2/5 mb-10 md:mb-0">
             <div className="rounded-lg overflow-hidden shadow-xl">
               <img 
-                src="/images/eu.jpg" 
+                src="/images/peito.jpg" 
                 alt="Ygor Taramelli - Nutricionista Esportivo" 
-                className="w-full h-auto"
+                className="w-full h-[480px] object-cover object-top"
               />
             </div>
           </div>
