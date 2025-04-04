@@ -1,9 +1,11 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Check, Mail, Phone, AlertCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -27,6 +29,24 @@ const ContactSection = () => {
     setIsSubmitting(true);
   
     try {
+      // Primeiro, salvar no Supabase
+      const { error: supabaseError } = await supabase
+        .from('Leads')
+        .insert({
+          name: formState.name,
+          email: formState.email,
+          telefone: formState.phone,
+          objetivo: formState.goal,
+          mensagem: formState.message,
+          criado_em: new Date().toISOString()
+        });
+
+      if (supabaseError) {
+        console.error("Erro ao salvar no Supabase:", supabaseError);
+        throw new Error(supabaseError.message);
+      }
+
+      // Também enviar para o Google Sheets como backup
       await fetch("https://script.google.com/macros/s/AKfycbyH5xu8twKUwqG55x_9jBRdL7vrwTDTdJWtt9vyXh2TCVlMX4VtLNr137jSRjODWZT1YA/exec", {
         method: "POST",
         headers: {
@@ -48,6 +68,15 @@ const ContactSection = () => {
         description: "Entraremos em contato em breve.",
         duration: 5000,
       });
+
+      // Limpar o formulário
+      setFormState({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+        goal: "emagrecimento"
+      });
     } catch (error) {
       console.error("Erro ao enviar formulário:", error);
       setIsSubmitting(false);
@@ -59,7 +88,6 @@ const ContactSection = () => {
     }
   };
   
-
   return (
     <section id="agendar" className="py-16 md:py-24 bg-primary-50">
       <div className="container mx-auto px-4">
@@ -86,7 +114,7 @@ const ContactSection = () => {
                     value={formState.name}
                     onChange={handleChange}
                     required
-                    className="border-gray-300"
+                    className="border-gray-300 bg-[#1e352c] text-white placeholder:text-gray-400"
                   />
                 </div>
 
@@ -100,7 +128,7 @@ const ContactSection = () => {
                       value={formState.email}
                       onChange={handleChange}
                       required
-                      className="border-gray-300"
+                      className="border-gray-300 bg-[#1e352c] text-white placeholder:text-gray-400"
                     />
                   </div>
                   <div>
@@ -111,7 +139,7 @@ const ContactSection = () => {
                       value={formState.phone}
                       onChange={handleChange}
                       required
-                      className="border-gray-300"
+                      className="border-gray-300 bg-[#1e352c] text-white placeholder:text-gray-400"
                     />
                   </div>
                 </div>
@@ -123,7 +151,7 @@ const ContactSection = () => {
                     name="goal" 
                     value={formState.goal}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 rounded-md bg-primary-900 text-white border border-primary-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
+                    className="w-full px-4 py-2 rounded-md bg-[#1e352c] text-white border border-primary-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
                     required
                   >
                     <option value="emagrecimento">Emagrecimento</option>
@@ -141,7 +169,7 @@ const ContactSection = () => {
                     value={formState.message}
                     onChange={handleChange}
                     rows={4}
-                    className="border-gray-300"
+                    className="border-gray-300 bg-[#1e352c] text-white placeholder:text-gray-400"
                     placeholder="Conte um pouco sobre seus objetivos e expectativas..."
                   />
                 </div>
