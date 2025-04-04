@@ -1,3 +1,4 @@
+
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -72,7 +73,7 @@ const TestimonialsSection = () => {
             onClick={scrollLeft}
             variant="outline"
             size="icon"
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-green-600 text-white hover:bg-green-700 shadow hidden md:flex"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-green-600 text-white hover:bg-green-700 shadow flex md:flex"
           >
             <ChevronLeft className="w-5 h-5" />
           </Button>
@@ -99,7 +100,7 @@ const TestimonialsSection = () => {
             onClick={scrollRight}
             variant="outline"
             size="icon"
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-green-600 text-white hover:bg-green-700 shadow hidden md:flex"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-green-600 text-white hover:bg-green-700 shadow flex md:flex"
           >
             <ChevronRight className="w-5 h-5" />
           </Button>
