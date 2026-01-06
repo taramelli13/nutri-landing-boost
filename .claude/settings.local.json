@@ -4,7 +4,8 @@
       "Bash(npm run dev:*)",
       "Bash(timeout:*)",
       "Bash(where:*)",
-      "Bash(powershell -Command \"npm run dev\")"
+      "Bash(powershell -Command \"npm run dev\")",
+      "Bash(git remote:*)"
     ]
   }
 }
